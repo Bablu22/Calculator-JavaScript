@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+
+    <style>
+        .calculator {
+            background-color: white;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            width: 280px;
+            margin: auto;
+            padding: 20px 10px;
+            border-radius: 15px;
+        }
+
+        .main-bar {
+            width: 100%;
+            padding: 5px 10px;
+            color: rgb(112, 108, 108);
+            text-align: right;
+            font-size: 18px;
+            background-color: wheat;
+            border: 1px solid white;
+            outline: none;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .my-btn {
+            background-color: rgba(209, 206, 206, 0.685);
+            font-size: 22px;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            border: none;
+            font-weight: bold;
+            color: rgb(124, 117, 117);
+            margin: 8px 10px;
+            line-height: 40px;
+        }
+
+        .ac-btn {
+            width: 40%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mx-auto">
+        <h1 class="text-center fw-bold text-danger mt-4">Calculator</h1>
+
+        <div class="calculator">
+            <input type="text" value="" class="main-bar" id="main-bar" placeholder="0">
+
+            <div class="button-area">
+                <div class="line text-center">
+                    <input type="button" value="7" class="my-btn" onclick="calculate(this.value)">
+                    <input type="button" value="8" class="my-btn" onclick="calculate(this.value)">
+                    <input type="button" value="9" class="my-btn" onclick="calculate(this.value)">
+                    <input type="button" value="+" class="my-btn" onclick="calculate(this.value)">
+                </div>
+                <div class="line text-center">
+                    <input type="button" value="4" class="my-btn" onclick="calculate(this.value)">
+                    <input type="button" value="5" class="my-btn" onclick="calculate(this.value)">
+                    <input type="button" value="6" class="my-btn" onclick="calculate(this.value)">
+                    <input type="button" value="-" class="my-btn" onclick="calculate(this.value)">
+                </div>
+                <div class="line text-center">
+                    <input type="button" value="1" class="my-btn" onclick="calculate(this.value)">
+                    <input type="button" value="2" class="my-btn" onclick="calculate(this.value)">
+                    <input type="button" value="3" class="my-btn" onclick="calculate(this.value)">
+                    <input type="button" value="*" class="my-btn" onclick="calculate(this.value)">
+                </div>
+                <div class="line text-center">
+                    <input type="button" value="0" class="my-btn" onclick="calculate(this.value)">
+                    <input type="button" value="00" class="my-btn" onclick="calculate(this.value)">
+                    <input type="button" value="." class="my-btn" onclick="calculate(this.value)">
+                    <input type="button" value="/" class="my-btn" onclick="calculate(this.value)">
+                </div>
+                <div class="line text-center">
+                    <input type="button" value="AC" class="my-btn rounded-0 ac-btn" onclick="mainBar.value=null">
+                    <input type="button" value="=" class="my-btn rounded-0 ac-btn " onclick=" calculation()">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <h4 class="text-center mt-4">Copyright &copy; Bablu Mia</h4>
+
+
+    <script>
+        const mainBar = document.getElementById('main-bar');
+        function calculate(x) {
+
+            mainBar.value = mainBar.value + x;
+
+        }
+        function calculation() {
+            mainBar.value = eval(mainBar.value)
+        }
+        
+
+    </script>
+</body>
+
+</html>
